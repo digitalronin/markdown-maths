@@ -6,23 +6,26 @@ TAG := digitalronin/markdown-maths
 
 build: .built
 
-shell: build
+run:
+	make clean
+	./copy-md-files-to-local-tree.sh ../eunice-data/eunice_data
+	make convert
+
+clean:
 	docker run --rm \
 	-v $${PWD}:/app \
 	--name mdmaths \
-	-it $(TAG) bash
-
-clean:
-	rm -rf src
+	$(TAG) rm -rf src html
 
 convert:
 	docker run --rm \
 	-v $${PWD}:/app \
 	--name mdmaths \
-	$(TAG) ./convert-local-md-files.sh
+	$(TAG) npx mpx build --input src --output html
 
-
-run:
-	make clean
-	./copy-md-files-to-local-tree.sh ../eunice-data/eunice_data
-
+# For use during development
+shell: build
+	docker run --rm \
+	-v $${PWD}:/app \
+	--name mdmaths \
+	-it $(TAG) bash
