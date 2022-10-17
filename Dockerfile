@@ -8,3 +8,8 @@ RUN apk add \
   make
 
 WORKDIR /app
+
+COPY package.json package-lock.json /app/
+
+RUN npm install
+

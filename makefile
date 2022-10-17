@@ -1,6 +1,6 @@
 TAG := digitalronin/markdown-maths
 
-.built: Dockerfile
+.built: Dockerfile package.json package-lock.json
 	docker build -t $(TAG) .
 	touch .built
 
