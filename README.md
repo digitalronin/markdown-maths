@@ -19,7 +19,7 @@ npx static-server
 
 ## TODO
 
-- [ ] Convert multiple files with links
+- [ ] Rewrite internal links, "README.md -> README.html"
 - [ ] Create a github pages site
 - [ ] Build a workflow to auto-publish documentation changes
 - [ ]

@@ -11,3 +11,18 @@ shell: build
 	-v $${PWD}:/app \
 	--name mdmaths \
 	-it $(TAG) bash
+
+clean:
+	rm -rf src
+
+convert:
+	docker run --rm \
+	-v $${PWD}:/app \
+	--name mdmaths \
+	$(TAG) ./convert-local-md-files.sh
+
+
+run:
+	make clean
+	./copy-md-files-to-local-tree.sh ../eunice-data/eunice_data
+
