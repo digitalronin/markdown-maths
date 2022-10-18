@@ -15,13 +15,13 @@ clean:
 	docker run --rm \
 	-v $${PWD}:/app \
 	--name mdmaths \
-	$(TAG) rm -rf src docs
+	$(TAG) rm -rf source docs
 
 convert:
 	docker run --rm \
 	-v $${PWD}:/app \
 	--name mdmaths \
-	$(TAG) npx mpx build --input src --output docs
+	$(TAG) npx mpx build --input source --output docs
 
 # For use during development
 shell: build

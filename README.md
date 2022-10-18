@@ -1,18 +1,5 @@
 # Markdown Maths
 
-THIS WAS ALL WORKING FINE, THEN SUDDENLY IT ALL WENT WRONG:
-
-```
-digitalronin/markdown-maths npx mpx build --input src --output docs
-Created new directory at src/.mpx containing config and layouts
-Converting src to docs
-Wrote 0 files in 0.27 seconds
-make[1]: Leaving directory '/home/david/markdown-maths'
-```
-
-I HAVE NO IDEA WHY IT STOPPED WRITING ANY FILES.
-------------------------------------------------------------
-
 Experimenting how to convert markdown files with inline and block equations to HTML.
 
 ## Convert Markdown
@@ -22,6 +9,14 @@ make run
 ```
 
 > This assumes the `eunice-data` repo is checked out at `../eunice-data`
+
+This creates a `docs` directory tree of HTML files, suitable for serving via GitHub Pages.
+
+## Warning
+
+Do not call the source directory `src` (even though that's the default expected by `mpx`). If the source directory is named `src` zero files will be written to the destination directory. The same source directory renamed to `source` works fine.
+
+I have no idea why this happens.
 
 ## Run HTTP server
 

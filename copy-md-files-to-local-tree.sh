@@ -7,7 +7,7 @@
 
 set -euo pipefail
 
-TGT_ROOT=src  # <-- used by convert-local-md-files.sh
+TGT_ROOT=source  # <-- the name `source` is used by makefile targets
 
 main() {
   local readonly src_root=$1
