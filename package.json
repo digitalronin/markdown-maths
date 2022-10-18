@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "mpx-cli": "^1.0.1"
+    "@mathpix/mpx-cli": "^0.4.0"
   }
 }
