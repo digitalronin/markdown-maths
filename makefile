@@ -6,7 +6,7 @@ TAG := digitalronin/markdown-maths
 
 build: .built
 
-run:
+run: .built
 	make clean
 	./copy-md-files-to-local-tree.sh ../eunice-data/eunice_data
 	make convert
