@@ -10,6 +10,7 @@ run: .built
 	make clean
 	./copy-md-files-to-local-tree.sh ../eunice-data/eunice_data
 	make convert
+	./fix-internal-links.sh docs markdown-maths
 
 clean:
 	docker run --rm \
